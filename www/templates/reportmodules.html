@@ -1,0 +1,47 @@
+
+<ion-view ng-controller="companyController">
+  <ion-content>
+<div padding>
+  <ion-segment ionSegment="true" class="customsegment" ng-model="categories" full="true" positive>
+
+    <ion-segment-button value="reports" class="active">
+      Reports
+    </ion-segment-button>
+    <ion-segment-button value="forms">
+      Forms
+    </ion-segment-button>
+    
+  </ion-segment>
+  
+</div>
+<div  ng-switch="categories">
+  <ion-list  ng-switch-default  >
+    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="report in mainreport.subrpt" type="item-text-wrap" href="#/app/chats/{{chat.id}}">
+        <!--<img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>-->
+        {{report.name}}
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+  </ion-list>
+
+  <ion-list ng-switch-when="forms" >
+    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="forms in formnametit" type="item-text-wrap" href="#/app/chats/{{chat.id}}">
+        <!--<img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>-->
+        {{forms.name}}
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+  </ion-list>
+</div>
+</ion-content>
+</ion-view>

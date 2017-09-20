@@ -1,0 +1,20 @@
+<ion-view>
+  <ion-content>
+    <div class="selectbox">
+     
+      <select class="companyselect" placeholder="Select Company" ng-options="company as company.name for company in CompanyDet.companyMasterDetails" 
+    ng-model="selectedItem" ng-change="update()">
+         <option value='' default>Select Company</option>
+    </select>
+  </div>
+  
+    <ks-swiper-container  loop="true" show-nav-buttons="true" slides-per-view="6" slides-per-column="6" pagination-is-active="true" space-between="0" pagination-clickable="true">
+      <ks-swiper-slide class="swiper-slide" ng-repeat="module in selectedItem.cmModule">
+        <ion-item class="item-animate  item-icon-right"    ng-click="updateReport('{{module.code}}')"  href="#/app/reportmodules/{{module.code}}">
+          {{module.name}} 
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+       </ks-swiper-slide>
+    </ks-swiper-container>
+  </ion-content>
+</ion-view>

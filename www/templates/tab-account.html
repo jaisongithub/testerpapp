@@ -1,0 +1,14 @@
+<ion-view ng-controller="userController">
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>
+	         <ul>
+			 <li>User Name : {{userDetail.username}}</li>
+			  <li>Email : {{userDetail.email}}</li>
+			    <li>Online Status : {{userDetail.onlinestatus}}</li>
+			 </ul>
+    </ion-list>
+  </ion-content>
+</ion-view>

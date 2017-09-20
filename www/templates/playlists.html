@@ -1,0 +1,24 @@
+<ion-view class="mainli"   view-title="ESAT">
+  <ion-content>
+    <ion-list>
+      <ion-item class="liitem" ng-repeat="playlist in playlists" ng-click="modulename(playlist.id);" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+<style>
+.mainli{
+margin:30px!important;
+}
+ .liitem{
+   display:inline-block !important;
+   width:36% !important;
+   margin:3% !important;
+}
+.liitem a{
+line-height:50px;
+text-align:center;
+}
+</style>
